@@ -8,6 +8,7 @@ ConsoleControl
 즉, 폼 위에 cmd 창을 올려놓는 방법이라고 보면 된다. 
 
 
+
 설치 방법
 -------------------------
 
@@ -24,6 +25,7 @@ For WPF:
 ````
 PM> Install-Package ConsoleControl.WPF
 ````
+
 
 
 사용 방법
@@ -50,6 +52,13 @@ consoleControl1.StartProcess("ping.exe", "192.168.0.1");
 
 ````
 consoleControl1.WriteOutput("Test String", Color.Red);
+````
+
+// 출력된 내용을 모두 가져오기
+
+````
+var str = consoleControl1.InternalRichTextBox.Text;
+MessageBox.Show(str.ToString());
 ````
 
 
