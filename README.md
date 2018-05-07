@@ -1,15 +1,15 @@
 ConsoleControl
 ==============
 
-ConsoleControl is a C# class library that lets you embed a console in a WinForms or WPF application. This console can be used for input and output for a process. It's great for making tools and utilities.
+내 프로그램에서 콘솔 기반의 프로그램을 실행하면 별도의 콘솔창이 떠서 작동한뒤에 종료하는 방식인데, 
+이 라이브러리를 사용하면 Winforms나 WPF 창에 콘솔창을 올려놓고 직접 결과를 보거나 직접 명령을 입력할 수 있다. 
+즉, 폼 위에 cmd 창을 올려놓는 방법이라고 보면 된다. 
 
 
-![ConsoleControl Screenshot](https://github.com/dwmkerr/consolecontrol/blob/master/Assets/screenshot.png?raw=true "ConsoleControl Screenshot")
-
-Installing ConsoleControl
+설치 방법
 -------------------------
 
-Installing couldn't be easier, just use Nuget. You can search for 'ConsoleControl' or install directly.
+Nuget에서 ConsoleControl을 검색한뒤에 설치하면 된다. 
 
 For WinForms:
 
@@ -23,16 +23,27 @@ For WPF:
 PM> Install-Package ConsoleControl.WPF
 ````
 
-Using ConsoleControl
+
+사용 방법
 --------------------
+비주얼 스튜디오의 툴박스에서 [항목추가]를 선택하여 ConsoleControl.dll을 추가한다. 
+추가한 컨트롤을 폼 위에 올려놓는다. 
+아래처럼 사용한다. 
 
-Once you've installed the package, the ConsoleControl will be available in the toolbox. Add a ConsoleControl to your WPF or WinForms project and call 'StartProcess' to start a new process. The process will run and all output will be directed to the ConsoleControl. You can also optionally enable input from the control.
+// cmd와 똑같이사용하고 싶을 경우
+consoleControl1.StartProcess("cmd", null);
 
-Buidling and Extending the Code
+// 직접 명령을 실행하고 결과를 보려고 하는 경우
+consoleControl1.StartProcess("ping.exe", "192.168.0.1");
+
+// 단순히 텍스트만 출력하고 싶을때 (출력되는 텍스트는 아무런 기능 없음)
+consoleControl1.WriteOutput("Test String", Color.Red);
+
+
+추가 사용 방법
 -------------------------------
 
-You can learn how the ConsoleControl was created by reading this article on the CodeProject:
+아래의 코드프로젝트 링크에서 추가 사용방법을 볼 수 있다. 
 
 http://www.codeproject.com/Articles/335909/Embedding-a-Console-in-a-C-Application
 
-Building the code is as straightforward as downloading it and building the project.
