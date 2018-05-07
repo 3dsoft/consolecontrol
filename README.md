@@ -36,15 +36,21 @@ PM> Install-Package ConsoleControl.WPF
 
 // cmd와 똑같이사용하고 싶을 경우
 
+````
 consoleControl1.StartProcess("cmd", null);
+````
 
 // 직접 명령을 실행하고 결과를 보려고 하는 경우
 
+````
 consoleControl1.StartProcess("ping.exe", "192.168.0.1");
+````
 
 // 단순히 텍스트만 출력하고 싶을때 (출력되는 텍스트는 아무런 기능 없음)
 
+````
 consoleControl1.WriteOutput("Test String", Color.Red);
+````
 
 
 추가 사용 방법
